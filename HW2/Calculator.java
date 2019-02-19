@@ -2,7 +2,10 @@
 // ASU CSE360 Assignment 2
 // Name of Author: Rebecca Martin
 // Class ID: 474
-// Description: 
+// Description: This class implements a basic arithmetic calculator.  
+//              It supports addition, subtraction, multiplication, and
+//              division.  It also returns the current total and prints
+//              the computation history.  
 //************************************************************************
 
 package cse360assign2;
@@ -25,45 +28,53 @@ public class Calculator {
      * This method returns the total variable
      */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
-	
+
     /**
      * This method adds the parameter to the total variable
      * 
      * @param  value  integer to be added to total
      */
 	public void add (int value) {
-		
+		total += value;
 	}
-	
+
     /**
      * This method subtracts the parameter from the total variable
      * 
      * @param  value  integer to be subtracted from the total
      */
 	public void subtract (int value) {
-		
+		total -= value;
 	}
-	
+
     /**
      * This method multiplies the parameter with the total variable
      * 
      * @param  value  integer to be multiplied with total
      */
 	public void multiply (int value) {
-		
+		total *= value;
 	}
-	
+
     /**
      * This method divides the total variable by the parameter
      * 
      * @param  value  integer to divide total by
      */
 	public void divide (int value) {
-		
+        if (value == 0)
+        {
+            total = 0;
+        }
+
+        else
+        {
+		    total /= value;
+        }
 	}
-	
+
     /**
      * This method returns the previous computations done by the calculator
      */
