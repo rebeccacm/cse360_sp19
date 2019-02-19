@@ -14,14 +14,18 @@ public class Calculator {
 
     /**
      * global variable total holds the result from the calculator computations 
+     * global variable history holds the computation history in a string
      */
 	private int total;
+    private String history;
 	
     /**
-     * This method is the constructor.  It initializes total to zero. 
+     * This method is the constructor.  It initializes total to zero and adds
+     * this initial zero to the history. 
      */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+        history = "0";
 	}
 	
     /**
@@ -30,40 +34,44 @@ public class Calculator {
 	public int getTotal () {
 		return total;
 	}
-
+	
     /**
-     * This method adds the parameter to the total variable
+     * This method adds the parameter to the total variable and updates the history
      * 
      * @param  value  integer to be added to total
      */
 	public void add (int value) {
+        history = history + " + " + value;
 		total += value;
 	}
-
+	
     /**
-     * This method subtracts the parameter from the total variable
+     * This method subtracts the parameter from the total variable and updates the history
      * 
      * @param  value  integer to be subtracted from the total
      */
 	public void subtract (int value) {
+        history = history + " - " + value;
 		total -= value;
 	}
-
+	
     /**
-     * This method multiplies the parameter with the total variable
+     * This method multiplies the parameter with the total variable and updates the history
      * 
      * @param  value  integer to be multiplied with total
      */
 	public void multiply (int value) {
+        history = history + " * " + value;
 		total *= value;
 	}
-
+	
     /**
-     * This method divides the total variable by the parameter
+     * This method divides the total variable by the parameter and updates the history
      * 
      * @param  value  integer to divide total by
      */
 	public void divide (int value) {
+        history = history + " / " + value;
         if (value == 0)
         {
             total = 0;
@@ -74,11 +82,11 @@ public class Calculator {
 		    total /= value;
         }
 	}
-
+	
     /**
      * This method returns the previous computations done by the calculator
      */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
